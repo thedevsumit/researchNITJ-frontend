@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ================================
+   DESIGN SYSTEM VARIABLES (HSL)
+   ================================ */
+@layer base {
+  :root {
+    --background: 215 29% 6%;
+    --foreground: 0 0% 100%;
+
+    --card: 215 25% 10%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 215 25% 10%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 180 85% 55%;
+    --primary-foreground: 215 29% 6%;
+
+    --secondary: 215 20% 15%;
+    --secondary-foreground: 180 85% 55%;
+
+    --muted: 215 20% 15%;
+    --muted-foreground: 200 20% 70%;
+
+    --accent: 180 85% 55%;
+    --accent-foreground: 215 29% 6%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 215 20% 20%;
+    --input: 215 20% 20%;
+    --ring: 180 85% 55%;
+
+    --radius: 0.75rem;
+
+    --gradient-primary: linear-gradient(135deg, hsl(180 85% 55%), hsl(200 85% 65%));
+    --gradient-hero: radial-gradient(circle at top, hsl(180 85% 55% / 0.15), hsl(200 85% 65% / 0.05));
+
+    --glow-primary: 0 0 40px hsl(180 85% 55% / 0.35);
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+}
+
+/* Smooth transitions globally */
+* {
+  transition: var(--transition-smooth);
+}
+
+/* Custom scrollbar for preview table */
+.preview-scroll::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.preview-scroll::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+  border-radius: 10px;
+}
+
+.preview-scroll::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.35);
+  border-radius: 10px;
+  border: 2px solid hsl(var(--background));
+  transition: background 0.3s ease;
+}
+
+.preview-scroll::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary) / 0.65);
+}
+
+.preview-scroll::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* Dropdown Scrollbar */
+select option::-webkit-scrollbar {
+  width: 6px;
+}
+
+select option::-webkit-scrollbar-thumb {
+  background: hsl(180 85% 55% / 0.4);
+  border-radius: 10px;
+}
+
+select option::-webkit-scrollbar-track {
+  background: transparent;
+}
