@@ -4,6 +4,7 @@ import { DataContext } from "../context/DataContext";
 import Navbar from "../components/Common/Navbar";
 import FilePreview from "../components/Upload/FilePreview";
 import toast from "react-hot-toast";
+import Footer from "../components/Common/Footer";
 
 export default function PreviewPage() {
   const { previewData, setPreviewData } = useContext(DataContext);
@@ -62,6 +63,7 @@ export default function PreviewPage() {
           )}
         </div>
       </div>
+      <Footer/>
     </>
   );
 }

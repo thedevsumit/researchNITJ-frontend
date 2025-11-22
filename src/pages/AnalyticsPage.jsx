@@ -3,6 +3,7 @@ import Charts from "../components/Analytics/Charts";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
 import { useRef } from "react";
+import Footer from "../components/Common/Footer";
 
 export default function AnalyticsPage() {
   const chartsRef = useRef(null);
@@ -76,6 +77,7 @@ export default function AnalyticsPage() {
           <Charts />
         </div>
       </div>
+      <Footer/>
     </>
   );
 }

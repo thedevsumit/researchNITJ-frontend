@@ -7,6 +7,7 @@ import SearchBar from "../components/Dashboard/SearchBar";
 import Filters from "../components/Dashboard/Filters";
 import Pagination from "../components/Dashboard/Pagination";
 import { ArrowUp, ArrowDown } from "lucide-react";
+import Footer from "../components/Common/Footer";
 
 export default function DashboardPage() {
   const { allData, setAllData, searchQuery, filters } = useContext(DataContext);
@@ -208,6 +209,7 @@ export default function DashboardPage() {
           <Pagination page={page} setPage={setPage} totalPages={totalPages} />
         </div>
       </div>
+      <Footer/>
     </>
   );
 }

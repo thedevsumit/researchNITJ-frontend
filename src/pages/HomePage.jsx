@@ -1,61 +1,13 @@
 import { Link, useLocation } from "react-router-dom";
-
+import Navbar from "../components/Common/Navbar";
+import Footer from "../components/Common/Footer";
 export default function HomePage() {
   const location = useLocation();
 
   const isActive = (path) => location.pathname === path;
   return (
     <div className="min-h-screen bg-background">
-      {/* Navbar */}
-      <nav className="border-b border-border/50 bg-background/80 backdrop-blur-sm sticky top-0 z-50">
-        <div className="container mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <svg
-                className="h-6 w-6 text-primary"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
-                />
-              </svg>
-              <span className="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-                ResearchNITJ
-              </span>
-            </div>
-           
-         
-            <div className="flex gap-6 text-muted-foreground text-sm md:text-base">
-              {[
-                { label: "Home", path: "/" },
-                { label: "Upload", path: "/upload" },
-                { label: "Preview", path: "/preview" },
-                { label: "Dashboard", path: "/dashboard" },
-                { label: "Analytics", path: "/analytics" },
-              ].map((item) => (
-                <Link
-                  key={item.path}
-                  to={item.path}
-                  className={`relative px-2 py-1 transition-colors hover:text-primary ${
-                    isActive(item.path) ? "text-primary" : ""
-                  }`}
-                >
-                  {item.label}
-
-                  {isActive(item.path) && (
-                    <span className="absolute -bottom-[8px] left-0 w-full h-[2px] bg-gradient-to-r from-primary to-blue-400 rounded-full"></span>
-                  )}
-                </Link>
-              ))}
-            </div>
-          </div>
-        </div>
-      </nav>
+      <Navbar />
 
       {/* Hero Section */}
       <section className="relative overflow-hidden">
@@ -453,6 +405,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
-} 
+}

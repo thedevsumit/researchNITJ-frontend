@@ -1,3 +1,4 @@
+import Footer from "../components/Common/Footer";
 import Navbar from "../components/Common/Navbar";
 import FileUpload from "../components/Upload/FileUpload";
 
@@ -124,7 +125,9 @@ export default function UploadPage() {
         <div className="max-w-3xl mx-auto animate-fadeIn">
           <FileUpload />
         </div>
+
       </div>
+      <Footer/>
     </>
   );
 }
